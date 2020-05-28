@@ -278,4 +278,89 @@ public class ComparePageController implements Initializable {
         fromDatePick.setVisible(false); // Hide from date picker
         toDatePick.setVisible(false); // Hide to date picker
     }
+
+
+
+    /**
+     * Event handler on refresh button press
+     */
+    public void refresh(ActionEvent actionEvent) {
+        /**
+         * Refresh Line Chart
+         */
+        // Get from and to dates
+        LocalDate fromLocalDate = fromDatePick.getValue();
+        LocalDate toLocalDate = toDatePick.getValue();
+
+        // Date choice validity check
+        if (fromLocalDate == null) return;
+        if (toLocalDate == null) return;
+        if (toLocalDate.isBefore(fromLocalDate)) return;
+        
+        // Clear line chart
+        lineChart.getData().remove(0);
+
+        // Setup the series
+        XYChart.Series series = new XYChart.Series();
+        series.setName(String.format("Expenses from %s until %s", fromLocalDate.toString(), toLocalDate.toString()));
+
+        // Get total expenses per day, from start date to end date
+        for (LocalDate date = fromLocalDate; date.isBefore(toLocalDate.plusDays(1)); date = date.plusDays(1)) {
+            // Query statement
+            String queryStatement;
+            queryStatement = String.format("SELECT * FROM item WHERE date='%s'", date.toString());
+            
+            // Getting the data
+            int totalExpenses = 0;
+            try {
+                ResultSet rs;
+                rs = statement.executeQuery(queryStatement);
+                while (rs.next()) { // Iterate through all the data recieved
+                    totalExpenses += rs.getInt("value");
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+
+            // Add this date total expenses to the series
+            series.getData().add(new XYChart.Data(date.toString(), totalExpenses));
+        }
+
+        // Add the new series to the line chart
+        lineChart.getData().add(series);
+
+
+        /**
+         * Refresh Pie Chart
+         */
+        // PieChart.Data array to store all expenses data per category
+        PieChart.Data[] totalPerCategory = new PieChart.Data[categoryList.length];
+
+        // Get total expenses per category
+        for (int i = 0; i < categoryList.length; i++) {
+            // Query statement
+            String category = categoryList[i];
+            String queryForCategory;
+            queryForCategory = String.format("SELECT * FROM item WHERE type='%s'", category);
+
+            // Getting the data
+            totalExpenses = 0;
+            try {
+                ResultSet rs;
+                rs = statement.executeQuery(queryForCategory);
+                while (rs.next()) { // Iterate through all the data recieved
+                    totalExpenses += rs.getInt("value");
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+
+            // Add this category total expenses data to PieChart.Data array
+            totalPerCategory[i] = new PieChart.Data(category, totalExpenses);
+        }
+
+        // Generating the pie chart
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(totalPerCategory);
+        pieChart.setData(pieChartData);
+    }
 }

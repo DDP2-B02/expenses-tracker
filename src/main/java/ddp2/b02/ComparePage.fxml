@@ -42,6 +42,7 @@
                                   <NumberAxis label="Total Expenses" side="LEFT" />
                                 </yAxis>
                               </LineChart>
+                              <Button layoutX="714.0" layoutY="18.0" mnemonicParsing="false" onAction="#refresh" text="⟳" />
                            </children>
                         </AnchorPane>
                      </children>
