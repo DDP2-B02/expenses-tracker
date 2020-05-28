@@ -167,6 +167,7 @@ public class ComparePageController implements Initializable {
         // Generating the pie chart
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(totalPerCategory);
         pieChart.setData(pieChartData);
+        pieChart.setTitle("Lifetime Expenses");
     }
 
 
@@ -213,8 +214,8 @@ public class ComparePageController implements Initializable {
         summaryButton.setDisable(true); // Disable summary button
         pieChart.setVisible(false); // Hide pie chart
         lineChart.setVisible(true); // Show line chart
-        fromDatePick.setVisible(true); // Show from date picker
-        toDatePick.setVisible(true); // Show to date picker
+        fromDatePick.setDisable(false); // Enable from date picker
+        toDatePick.setDisable(false); // Enable to date picker
         isInvalidDate(); // Show or hide invalid date prompt
     }
 
@@ -228,8 +229,8 @@ public class ComparePageController implements Initializable {
         summaryButton.setDisable(false); // Enable summary button
         pieChart.setVisible(true); // Show pie chart
         lineChart.setVisible(false); // Hide line chart
-        fromDatePick.setVisible(false); // Hide from date picker
-        toDatePick.setVisible(false); // Hide to date picker
+        fromDatePick.setDisable(true); // Disable from date picker
+        toDatePick.setDisable(true); // Disable to date picker
         invalidDate.setVisible(false);
     }
 
