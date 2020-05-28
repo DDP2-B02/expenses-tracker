@@ -43,7 +43,7 @@
                                   <NumberAxis label="Total Expenses" side="LEFT" />
                                 </yAxis>
                               </LineChart>
-                              <Button layoutX="714.0" layoutY="18.0" mnemonicParsing="false" onAction="#refresh" text="⟳" />
+                              <Button styleClass="refreshBtn" layoutX="714.0" layoutY="18.0" mnemonicParsing="false" onAction="#refresh" text="⟳" />
                               <Text fx:id="invalidDate" fill="RED" layoutX="387.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid date!" />
                            </children>
                         </AnchorPane>

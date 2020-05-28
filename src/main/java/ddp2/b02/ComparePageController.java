@@ -14,7 +14,9 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -375,7 +377,7 @@ public class ComparePageController implements Initializable {
                 queryForCategory = String.format("SELECT * FROM item WHERE type='%s'", category);
 
                 // Getting the data
-                totalExpenses = 0;
+                int totalExpenses = 0;
                 try {
                     ResultSet rs;
                     rs = statement.executeQuery(queryForCategory);

@@ -52,3 +52,8 @@
     -fx-font-weight: bold;
     -fx-font-size: 1.3em;
 }
+
+.refreshBtn {
+    -fx-font-size: 1.5em;
+    -fx-font-weight: bold;
+}
