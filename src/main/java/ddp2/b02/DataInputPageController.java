@@ -203,10 +203,14 @@ public class DataInputPageController implements Initializable {
             Label noItem = new Label("It's Empty");
             data.getChildren().addAll(noItem);
         } else {
-            for (Object[] details : dataItem.values()) {
-                Label description = new Label(details[1].toString());
-                Label value = new Label(details[0].toString());
-                data.getChildren().addAll(description, value);
+            for (Integer id : dataItem.keySet()) {
+                Label description = new Label(dataItem.get(id)[1].toString());
+                Label value = new Label(dataItem.get(id)[0].toString());
+                Button delete = new Button("Delete");
+                delete.setOnAction(event -> {
+                    delete(id);
+                });
+                data.getChildren().addAll(description, value, delete);
             }
         }
         return data;
@@ -248,5 +252,16 @@ public class DataInputPageController implements Initializable {
         dataAcademic.getChildren().add(showExpenses(data.get("ACADEMIC")));
         dataMisc.getChildren().add(showExpenses(data.get("MISC")));
         dataTransport.getChildren().add(showExpenses(data.get("TRANSPORT")));
+    }
+
+    public void delete(int id) {
+       String query = String.format("DELETE FROM item WHERE item_id=%d", id);
+       try {
+           Statement statement = connection.createStatement();
+           statement.execute(query);
+       } catch (Exception ex) {
+           ex.printStackTrace();
+       }
+       refresh();
     }
 }
