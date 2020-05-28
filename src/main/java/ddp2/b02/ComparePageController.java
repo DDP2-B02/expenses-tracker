@@ -214,8 +214,6 @@ public class ComparePageController implements Initializable {
         summaryButton.setDisable(true); // Disable summary button
         pieChart.setVisible(false); // Hide pie chart
         lineChart.setVisible(true); // Show line chart
-        fromDatePick.setDisable(false); // Enable from date picker
-        toDatePick.setDisable(false); // Enable to date picker
         isInvalidDate(); // Show or hide invalid date prompt
     }
 
@@ -229,9 +227,7 @@ public class ComparePageController implements Initializable {
         summaryButton.setDisable(false); // Enable summary button
         pieChart.setVisible(true); // Show pie chart
         lineChart.setVisible(false); // Hide line chart
-        fromDatePick.setDisable(true); // Disable from date picker
-        toDatePick.setDisable(true); // Disable to date picker
-        invalidDate.setVisible(false);
+        isInvalidDate(); // Show or hide invalid date prompt
     }
 
 
@@ -294,15 +290,24 @@ public class ComparePageController implements Initializable {
          * Refresh Pie Chart
          */
         else if (pieChart.isVisible()) {
+            // Get from and to dates
+            LocalDate fromLocalDate = fromDatePick.getValue();
+            LocalDate toLocalDate = toDatePick.getValue();
+
+            // Date choice validity check
+            if (fromLocalDate == null) return;
+            if (toLocalDate == null) return;
+            if (isInvalidDate()) return;
+
             // PieChart.Data array to store all expenses data per category
             PieChart.Data[] totalPerCategory = new PieChart.Data[categoryList.length];
 
-            // Get total expenses per category
+            // Get total expenses per category between two dates
             for (int i = 0; i < categoryList.length; i++) {
                 // Query statement
                 String category = categoryList[i];
                 String queryForCategory;
-                queryForCategory = String.format("SELECT * FROM item WHERE type='%s'", category);
+                queryForCategory = String.format("SELECT * FROM item WHERE (date BETWEEN '%s' AND '%s') AND (type='%s')", fromLocalDate.toString(), toLocalDate.toString(), category);
 
                 // Getting the data
                 int totalExpenses = 0;
@@ -323,6 +328,7 @@ public class ComparePageController implements Initializable {
             // Generating the pie chart
             ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(totalPerCategory);
             pieChart.setData(pieChartData);
+            pieChart.setTitle(String.format("Expenses from %s until %s", fromLocalDate.toString(), toLocalDate.toString()));
         }
     }
 }
