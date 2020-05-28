@@ -52,3 +52,24 @@
     -fx-font-weight: bold;
     -fx-font-size: 1.3em;
 }
+
+.successMsg {
+    -fx-background-color: #3ac200;
+    -fx-background-radius: .5em;
+    -fx-font-weight: bold;
+    -fx-label-padding: 0.2em 0.5em 0.2em 0.5em;
+    -fx-text-fill: white;
+}
+
+.refreshBtn {
+    -fx-font-size: 1.5em;
+    -fx-font-weight: bold;
+}
+
+.invalidDate {
+    -fx-background-color: #3ac200;
+    -fx-background-radius: .5em;
+    -fx-font-weight: bold;
+    -fx-label-padding: 0.2em 0.5em 0.2em 0.5em;
+    -fx-text-fill: white;
+}
