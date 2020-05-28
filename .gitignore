@@ -1,6 +1,6 @@
 .gradle
-**/build/
-!src/**/build/
+/build/
+!src//build/
 
 #Ignore idea
 .idea/
