@@ -27,7 +27,6 @@ public class ComparePageController implements Initializable {
     private Stage primaryStage;
     private Scene dataInputScene;
     
-
     //Set DB Connectivity
     private Connectivity connectivity = new Connectivity();
     private Connection connection = connectivity.getConnection();
@@ -58,9 +57,6 @@ public class ComparePageController implements Initializable {
     // Pie chart
     @FXML
     private PieChart pieChart;
-    pieChart.setLabelsVisible(false); // Hide labels
-    pieChart.setLegendVisible(true);
-    pieChart.setLegendSide(Side.RIGHT);
 
     // Go to summary page button
     @FXML
@@ -72,7 +68,6 @@ public class ComparePageController implements Initializable {
 
     public ComparePageController() throws SQLException {
     }
-
 
     public void setStage(Stage primaryStage) {
         this.primaryStage = primaryStage;
@@ -94,6 +89,10 @@ public class ComparePageController implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        // Node settings
+        pieChart.setLabelsVisible(false); // Hide labels
+        pieChart.setLegendVisible(true);
+        pieChart.setLegendSide(Side.RIGHT);
         summaryButton.setDisable(true); // Disable summary button
         pieChart.setVisible(false); // Hide pie chart
 
@@ -198,7 +197,7 @@ public class ComparePageController implements Initializable {
             }
 
             // Add this date total expenses to the series
-            series.getData().add(new XYChart.Data(date, totalExpenses));
+            series.getData().add(new XYChart.Data(date.toString(), totalExpenses));
         }
 
         // Add the new series to the line chart
@@ -245,7 +244,7 @@ public class ComparePageController implements Initializable {
             }
 
             // Add this date total expenses to the series
-            series.getData().add(new XYChart.Data(date, totalExpenses));
+            series.getData().add(new XYChart.Data(date.toString(), totalExpenses));
         }
 
         // Add the new series to the line chart
@@ -264,7 +263,6 @@ public class ComparePageController implements Initializable {
         lineChart.setVisible(true); // Show line chart
         fromDatePick.setVisible(true); // Show from date picker
         toDatePick.setVisible(true); // Show to date picker
-        
     }
 
 
