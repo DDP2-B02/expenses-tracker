@@ -13,6 +13,7 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -64,6 +65,9 @@ public class DataInputPageController implements Initializable {
     @FXML
     private TextArea expenseDescription;
 
+    @FXML
+    private VBox foodContent;
+
     public DataInputPageController() throws SQLException {
     }
 
@@ -75,6 +79,15 @@ public class DataInputPageController implements Initializable {
         //Set Choice Box Items
         choiceBox.setItems(FXCollections.observableArrayList(this.categoryList));
         choiceBox.setValue("FOOD");
+
+        generateAchordion();
+    }
+
+    public void generateAchordion() {
+        StackPane s1 = new StackPane(new Label("One"));
+        StackPane s2 = new StackPane(new Label("Two"));
+
+        foodContent.getChildren().addAll(s1, s2);
     }
 
     //Set Stage

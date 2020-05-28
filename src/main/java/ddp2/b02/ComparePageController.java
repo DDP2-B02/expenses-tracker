@@ -294,8 +294,6 @@ public class ComparePageController implements Initializable {
         toDatePick.setVisible(true); // Show to date picker
     }
 
-
-
     /**
      * Event handler on category button press
      */

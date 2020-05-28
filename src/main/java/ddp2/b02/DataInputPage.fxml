@@ -40,12 +40,12 @@
                                       <panes>
                                         <TitledPane animated="false" text="Food">
                                           <content>
-                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                                <VBox fx:id="foodContent" />
                                           </content>
                                         </TitledPane>
                                         <TitledPane animated="false" text="Transport">
                                           <content>
-                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                                <VBox />
                                           </content>
                                         </TitledPane>
                                         <TitledPane animated="false" text="Housing">
