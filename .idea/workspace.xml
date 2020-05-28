@@ -1,8 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:adamy" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:adamy" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:hanif" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="aea8e142-95a1-443d-b8da-a59913d05566" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/connectivity/Connectivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/connectivity/Connectivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ddp2/b02/ComparePageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ddp2/b02/ComparePageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ddp2/b02/DataInputPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ddp2/b02/DataInputPageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ddp2/b02/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ddp2/b02/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/connectivity/Connectivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/connectivity/Connectivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ddp2/b02/DataInputPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ddp2/b02/DataInputPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ddp2/b02/DataInputPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ddp2/b02/DataInputPageController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,27 +108,20 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/ddp2/b02" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="restartRequiresConfirmation" value="false" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ASUS\Documents\project_files\expenses-tracker\src\main\java\ddp2\b02" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ASUS\Documents\project_files\expenses-tracker\src\main\resources\fxml" />
-      <recent name="C:\Users\ASUS\Documents\project_files\expenses-tracker\src\main\java\ddp2\b02" />
-      <recent name="C:\Users\ASUS\Documents\project_files\expenses-tracker\src\main" />
+      <recent name="D:\College\DDP\expenses-tracker" />
     </key>
   </component>
   <component name="RunManager">
@@ -111,18 +150,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -136,61 +163,59 @@
     </task>
     <servers />
   </component>
-  <component name="UnknownFeatures">
-    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="23" key="#Project_Structure" timestamp="1589193550823">
+    <state x="275" y="23" key="#Project_Structure" timestamp="1589189472282">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="23" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1589193550823" />
-    <state x="488" y="74" key="#com.intellij.ide.util.MemberChooser" timestamp="1589206181341">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="488" y="74" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1589206181341" />
-    <state x="463" y="106" key="FileChooserDialogImpl" timestamp="1589192032891">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-<<<<<<< HEAD
     <state x="275" y="23" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1589189472282" />
-    <state width="1323" height="237" key="GridCell.Tab.0.bottom" timestamp="1589209736246">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1590645957960">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1323" height="237" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1589209736246" />
-    <state width="1323" height="237" key="GridCell.Tab.0.center" timestamp="1589209736245">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1590645957960" />
+    <state width="1340" height="266" key="GridCell.Tab.0.bottom" timestamp="1590666015214">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1323" height="237" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1589209736245" />
-    <state width="1323" height="237" key="GridCell.Tab.0.left" timestamp="1589209736245">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1589190219504" />
+    <state width="1340" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1590666015214" />
+    <state width="1340" height="266" key="GridCell.Tab.0.center" timestamp="1590666015214">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1323" height="237" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1589209736245" />
-    <state width="1323" height="237" key="GridCell.Tab.0.right" timestamp="1589209736246">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1589190219503" />
+    <state width="1340" height="266" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1590666015214" />
+    <state width="1340" height="266" key="GridCell.Tab.0.left" timestamp="1590666015214">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1323" height="237" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1589209736246" />
-=======
-    <state x="463" y="106" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1589192032891" />
-    <state width="1323" height="237" key="GridCell.Tab.0.bottom" timestamp="1589209330352">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1589190219503" />
+    <state width="1340" height="266" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1590666015214" />
+    <state width="1340" height="266" key="GridCell.Tab.0.right" timestamp="1590666015214">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1323" height="237" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1589209330352" />
-    <state width="1323" height="237" key="GridCell.Tab.0.center" timestamp="1589209330352">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="237" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1589209330352" />
-    <state width="1323" height="237" key="GridCell.Tab.0.left" timestamp="1589209330352">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="237" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1589209330352" />
-    <state width="1323" height="237" key="GridCell.Tab.0.right" timestamp="1589209330352">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="237" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1589209330352" />
->>>>>>> c3641bacd4492a644309fe476a7bb582b1f16b0f
-    <state x="184" y="7" key="SettingsEditor" timestamp="1589189585270">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1589190219503" />
+    <state width="1340" height="266" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1590666015214" />
+    <state x="259" y="10" key="SettingsEditor" timestamp="1590649403726">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="184" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1589189585270" />
+    <state x="259" y="10" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1590649403726" />
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1590645933942">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1590645933942" />
+    <state x="623" y="244" width="672" height="678" key="search.everywhere.popup" timestamp="1590650097796">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="244" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1590650097796" />
   </component>
 </project>

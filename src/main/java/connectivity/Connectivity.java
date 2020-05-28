@@ -12,7 +12,7 @@ public class Connectivity {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:8080/"+dbName,dbUserName,dbPassWord);
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/"+dbName,dbUserName,dbPassWord);
         } catch (Exception e) {
             e.printStackTrace();
         }
