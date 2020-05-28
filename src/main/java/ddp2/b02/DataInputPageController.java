@@ -41,10 +41,6 @@ public class DataInputPageController implements Initializable {
     private Connection connection = connectivity.getConnection();
     private Statement statement = connection.createStatement();
 
-    // Pie chart
-    @FXML
-    private PieChart pieChart;
-
     @FXML
     private DatePicker datePicker;
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyy-MM-dd");
@@ -116,6 +112,5 @@ public class DataInputPageController implements Initializable {
         String sql;
         sql = String.format("INSERT INTO `item`(`date`, `type`, `value`, `description`) VALUES ('%s','%s', %d , '%s')", this.date, choice, value, description);
         statement.executeUpdate(sql);
-        ComparePageController.generatePieChart(pieChart);
     }
 }
