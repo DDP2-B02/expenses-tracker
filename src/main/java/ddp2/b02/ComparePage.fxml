@@ -33,6 +33,7 @@
                               <DatePicker fx:id="toDatePick" layoutX="203.0" layoutY="21.0" onAction="#onToDateChange" promptText="To date..." />
                               <Button fx:id="summaryButton" layoutX="241.0" layoutY="423.0" mnemonicParsing="false" onAction="#gotoSummary" prefHeight="37.0" prefWidth="142.0" styleClass="btn" text="Summary" />
                               <Button fx:id="categoryButton" layoutX="398.0" layoutY="423.0" mnemonicParsing="false" onAction="#gotoCategory" prefHeight="37.0" prefWidth="142.0" styleClass="btn" text="By Category" />
+                              <Label fx:id="noData" layoutX="290.0" layoutY="234.0" styleClass="noData" text="No data found!" textAlignment="CENTER" />
                               <PieChart fx:id="pieChart" layoutX="32.0" layoutY="59.0" prefHeight="348.0" prefWidth="713.0" />
                               <LineChart fx:id="lineChart" layoutX="32.0" layoutY="59.0" prefHeight="348.0" prefWidth="713.0">
                                 <xAxis>

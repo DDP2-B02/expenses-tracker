@@ -67,6 +67,10 @@ public class ComparePageController implements Initializable {
     @FXML
     private PieChart pieChart;
 
+    // No data found prompt
+    @FXML
+    private Label noData;
+
     // Go to summary page button
     @FXML
     private Button summaryButton;
@@ -107,6 +111,7 @@ public class ComparePageController implements Initializable {
         pieChart.setLegendSide(Side.RIGHT);
         summaryButton.setDisable(true); // Disable summary button
         pieChart.setVisible(false); // Hide pie chart
+        noData.setVisible(false);
 
         /**
          * Generate the Line Graph for summary page
@@ -138,6 +143,9 @@ public class ComparePageController implements Initializable {
         /**
          * Generate the Pie Chart for summary page
          */
+        // Check if data found or not
+        boolean dataFound = false;
+
         // PieChart.Data array to store all expenses data per category
         PieChart.Data[] totalPerCategory = new PieChart.Data[categoryList.length];
 
@@ -162,12 +170,14 @@ public class ComparePageController implements Initializable {
 
             // Add this category total expenses data to PieChart.Data array
             totalPerCategory[i] = new PieChart.Data(category, totalExpensesCategory);
+            if (totalExpensesCategory != 0) { dataFound = true; } // Minimal one true value
         }
 
         // Generating the pie chart
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(totalPerCategory);
         pieChart.setData(pieChartData);
         pieChart.setTitle("Lifetime Expenses");
+        if (dataFound) { noData.setVisible(false); } else { noData.setVisible(true); }
     }
 
 
@@ -299,6 +309,9 @@ public class ComparePageController implements Initializable {
             if (toLocalDate == null) return;
             if (isInvalidDate()) return;
 
+            // Check if data found or not
+            boolean dataFound = false;
+
             // PieChart.Data array to store all expenses data per category
             PieChart.Data[] totalPerCategory = new PieChart.Data[categoryList.length];
 
@@ -323,12 +336,14 @@ public class ComparePageController implements Initializable {
 
                 // Add this category total expenses data to PieChart.Data array
                 totalPerCategory[i] = new PieChart.Data(category, totalExpenses);
+                if (totalExpenses != 0) { dataFound = true; } // Minimal one true value
             }
 
             // Generating the pie chart
             ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(totalPerCategory);
             pieChart.setData(pieChartData);
             pieChart.setTitle(String.format("Expenses from %s until %s", fromLocalDate.toString(), toLocalDate.toString()));
+            if (dataFound) { noData.setVisible(false); } else { noData.setVisible(true); };
         }
     }
 }
