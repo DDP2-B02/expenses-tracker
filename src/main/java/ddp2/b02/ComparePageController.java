@@ -1,7 +1,6 @@
 package ddp2.b02;
 
 import connectivity.Connectivity;
-import javafx.animation.PauseTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,9 +13,8 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
-import javafx.scene.text.Text;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -55,7 +53,7 @@ public class ComparePageController implements Initializable {
 
     // Invalid date prompt
     @FXML
-    private Text invalidDate;
+    private Label invalidDate;
 
     // Line chart
     @FXML
@@ -97,6 +95,8 @@ public class ComparePageController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Node settings
+        fromDatePick.setEditable(false);
+        toDatePick.setEditable(false);
         invalidDate.setVisible(false);
         pieChart.setLabelsVisible(false); // Hide labels
         pieChart.setLegendVisible(true);
@@ -145,19 +145,19 @@ public class ComparePageController implements Initializable {
             queryForCategory = String.format("SELECT * FROM item WHERE type='%s'", category);
 
             // Getting the data
-            totalExpenses = 0;
+            int totalExpensesCategory = 0;
             try {
                 ResultSet rs;
                 rs = statement.executeQuery(queryForCategory);
                 while (rs.next()) { // Iterate through all the data recieved
-                    totalExpenses += rs.getInt("value");
+                    totalExpensesCategory += rs.getInt("value");
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
 
             // Add this category total expenses data to PieChart.Data array
-            totalPerCategory[i] = new PieChart.Data(category, totalExpenses);
+            totalPerCategory[i] = new PieChart.Data(category, totalExpensesCategory);
         }
 
         // Generating the pie chart
@@ -165,14 +165,22 @@ public class ComparePageController implements Initializable {
         pieChart.setData(pieChartData);
     }
 
-    public void checkInvalidDate() {
-        if (toDatePick.getValue().isBefore(fromDatePick.getValue())) {
+
+
+    /**
+     * Check if date is valid (from date is before to date)
+     * Return true if invalid; false otherwise
+     */
+    public boolean isInvalidDate() {
+        if ((fromDatePick.getValue() != null) && (toDatePick.getValue() != null) && (toDatePick.getValue().isBefore(fromDatePick.getValue()))) {
             invalidDate.setVisible(true); // Show invalid date prompt
-            return;
-        } else {
+            return true;
+        } else { 
             invalidDate.setVisible(false);
+            return false;
         }
     }
+
 
     
     /**
@@ -185,7 +193,7 @@ public class ComparePageController implements Initializable {
 
         // Date choice validity check
         if (toLocalDate == null) return;
-        checkInvalidDate();
+        if (isInvalidDate()) return;
 
         // Clear line chart
         lineChart.getData().remove(0);
@@ -232,7 +240,7 @@ public class ComparePageController implements Initializable {
 
         // Date choice validity check
         if (fromLocalDate == null) return;
-        checkInvalidDate();
+        if (isInvalidDate()) return;
         
         // Clear line chart
         lineChart.getData().remove(0);
@@ -279,7 +287,7 @@ public class ComparePageController implements Initializable {
         lineChart.setVisible(true); // Show line chart
         fromDatePick.setVisible(true); // Show from date picker
         toDatePick.setVisible(true); // Show to date picker
-        checkInvalidDate();
+        isInvalidDate(); // Show or hide invalid date prompt
     }
 
 
@@ -315,7 +323,7 @@ public class ComparePageController implements Initializable {
             // Date choice validity check
             if (fromLocalDate == null) return;
             if (toLocalDate == null) return;
-            checkInvalidDate();
+            if (isInvalidDate()) return;
             
             // Clear line chart
             lineChart.getData().remove(0);

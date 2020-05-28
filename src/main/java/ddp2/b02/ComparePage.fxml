@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="comparePageRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600" minWidth="800" prefHeight="600.0" prefWidth="900.0" styleClass="main" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ddp2.b02.ComparePageController">
    <children>
@@ -43,8 +42,8 @@
                                   <NumberAxis label="Total Expenses" side="LEFT" />
                                 </yAxis>
                               </LineChart>
-                              <Button styleClass="refreshBtn" layoutX="714.0" layoutY="18.0" mnemonicParsing="false" onAction="#refresh" text="⟳" />
-                              <Text fx:id="invalidDate" styleClass="invalidDate" fill="RED" layoutX="387.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid date!" />
+                              <Button layoutX="714.0" layoutY="18.0" mnemonicParsing="false" onAction="#refresh" styleClass="refreshBtn" text="⟳" />
+                              <Label fx:id="invalidDate" layoutX="389.0" layoutY="21.0" styleClass="invalidDate" text="Invalid date!" />
                            </children>
                         </AnchorPane>
                      </children>
