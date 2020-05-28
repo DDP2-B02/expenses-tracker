@@ -54,8 +54,8 @@
     -fx-font-size: 1.3em;
 }
 
-.successMsg {
-    -fx-background-color: #3ac200;
+.message {
+    -fx-background-color: #0041ab;
     -fx-background-radius: .5em;
     -fx-font-weight: bold;
     -fx-label-padding: 0.2em 0.5em 0.2em 0.5em;
