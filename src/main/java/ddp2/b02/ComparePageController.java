@@ -41,7 +41,7 @@ public class ComparePageController implements Initializable {
         "ACADEMIC",
         "MISC",
         "TRANSPORT"
-      };
+    };
 
     // From date picker
     @FXML
@@ -58,9 +58,6 @@ public class ComparePageController implements Initializable {
     // Pie chart
     @FXML
     private PieChart pieChart;
-    pieChart.setLabelsVisible(false); // Hide labels
-    pieChart.setLegendVisible(true);
-    pieChart.setLegendSide(Side.RIGHT);
 
     // Go to summary page button
     @FXML
@@ -86,22 +83,48 @@ public class ComparePageController implements Initializable {
         this.primaryStage.setScene(this.dataInputScene);
     }
 
-
-
     /**
      * Will initialize to display summary page
      * Category page elements will be hidden
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        //Initialize pie chart
+        pieChart.setLabelsVisible(false); // Hide labels
+        pieChart.setLegendVisible(true);
+        pieChart.setLegendSide(Side.RIGHT);
+
         summaryButton.setDisable(true); // Disable summary button
         pieChart.setVisible(false); // Hide pie chart
 
         /**
          * Generate the Line Graph for summary page
          */
+        String todayDate = getTodayDate();
+        int totalExpenses = getExpensesData();
+
+
+        // Add today's expenses to the line chart
+        XYChart.Series series = new XYChart.Series();
+        series.setName("Today's Expenses");
+        series.getData().add(new XYChart.Data(todayDate, totalExpenses));
+        lineChart.getData().add(series);
+
+        //Generate pie chart
+        try {
+            ComparePageController.generatePieChart(this.pieChart);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public String getTodayDate() {
+        return ((LocalDate) LocalDate.now()).toString();
+    }
+
+    public int getExpensesData() {
         // Query statement
-        String todayDate = ((LocalDate) LocalDate.now()).toString();
+        String todayDate = getTodayDate();
         String queryTodayData;
         queryTodayData = String.format("SELECT * FROM item WHERE date='%s'", todayDate);
 
@@ -116,17 +139,27 @@ public class ComparePageController implements Initializable {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        return totalExpenses;
+    }
 
-        // Add today's expenses to the line chart
-        XYChart.Series series = new XYChart.Series();
-        series.setName("Today's Expenses");
-        series.getData().add(new XYChart.Data(todayDate, totalExpenses));
-        lineChart.getData().add(series);
-
+    public static void generatePieChart(PieChart piechart) throws SQLException {
 
         /**
          * Generate the Pie Chart for summary page
          */
+        String[] categoryList = {
+                "FOOD",
+                "HOUSING",
+                "HEALTHCARE",
+                "ACADEMIC",
+                "MISC",
+                "TRANSPORT"
+        };
+
+        Connectivity connectivity = new Connectivity();
+        Connection connection = connectivity.getConnection();
+        Statement statement = connection.createStatement();
+
         // PieChart.Data array to store all expenses data per category
         PieChart.Data[] totalPerCategory = new PieChart.Data[categoryList.length];
 
@@ -138,7 +171,7 @@ public class ComparePageController implements Initializable {
             queryForCategory = String.format("SELECT * FROM item WHERE type='%s'", category);
 
             // Getting the data
-            totalExpenses = 0;
+            int totalExpenses = 0;
             try {
                 ResultSet rs;
                 rs = statement.executeQuery(queryForCategory);
@@ -155,10 +188,8 @@ public class ComparePageController implements Initializable {
 
         // Generating the pie chart
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(totalPerCategory);
-        pieChart.setData(pieChartData);
+        piechart.setData(pieChartData);
     }
-
-
     
     /**
      * Event handler when from date was changed

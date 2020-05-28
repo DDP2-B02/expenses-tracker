@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
@@ -40,6 +41,9 @@ public class DataInputPageController implements Initializable {
     private Connection connection = connectivity.getConnection();
     private Statement statement = connection.createStatement();
 
+    // Pie chart
+    @FXML
+    private PieChart pieChart;
 
     @FXML
     private DatePicker datePicker;
@@ -112,5 +116,6 @@ public class DataInputPageController implements Initializable {
         String sql;
         sql = String.format("INSERT INTO `item`(`date`, `type`, `value`, `description`) VALUES ('%s','%s', %d , '%s')", this.date, choice, value, description);
         statement.executeUpdate(sql);
+        ComparePageController.generatePieChart(pieChart);
     }
 }
