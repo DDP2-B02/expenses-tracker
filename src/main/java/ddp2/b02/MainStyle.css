@@ -2,6 +2,7 @@
 .main {
     -fx-background-color: white;
     -fx-alignment: center;
+    -fx-font-family: lato;
 }
 
 .logo {
@@ -53,8 +54,8 @@
     -fx-font-size: 1.3em;
 }
 
-.successMsg {
-    -fx-background-color: #3ac200;
+.message {
+    -fx-background-color: #0041ab;
     -fx-background-radius: .5em;
     -fx-font-weight: bold;
     -fx-label-padding: 0.2em 0.5em 0.2em 0.5em;
@@ -72,4 +73,23 @@
     -fx-font-weight: bold;
     -fx-label-padding: 0.2em 0.5em 0.2em 0.5em;
     -fx-text-fill: white;
+}
+
+.delete-button {
+    -fx-background-color: #ff5151;
+    -fx-background-radius: .5em;
+    -fx-font-weight: bold;
+    -fx-label-padding: 0.1em 0.1em 0.1em 0.1em;
+    -fx-text-fill: white;
+}
+
+.delete-button:hover {
+    -fx-background-color: red;
+    -fx-cursor: hand;
+}
+
+.item-container {
+    -fx-padding: 0.3em 0.1em 0.3em 0.1em;
+    -fx-border-color: #DADADA;
+    -fx-border-style: hidden hidden solid hidden;
 }

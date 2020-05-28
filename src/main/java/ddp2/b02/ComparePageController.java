@@ -166,11 +166,14 @@ public class ComparePageController implements Initializable {
     }
 
     public void checkInvalidDate() {
-        if (toDatePick.getValue().isBefore(fromDatePick.getValue())) {
-            invalidDate.setVisible(true); // Show invalid date prompt
-            return;
-        } else {
-            invalidDate.setVisible(false);
+        boolean toDateIsValid = toDatePick.getValue() != null;
+        if (toDateIsValid) {
+            if (toDatePick.getValue().isBefore(fromDatePick.getValue())) {
+                invalidDate.setVisible(true); // Show invalid date prompt
+                return;
+            } else {
+                invalidDate.setVisible(false);
+            }
         }
     }
 
