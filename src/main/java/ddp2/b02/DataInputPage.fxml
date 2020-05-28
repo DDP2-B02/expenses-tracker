@@ -65,12 +65,13 @@
                         <FlowPane orientation="VERTICAL" prefHeight="185.0" prefWidth="743.0" rowValignment="BOTTOM" styleClass="addexpenses-container">
                            <children>
                               <Label prefHeight="23.0" prefWidth="119.0" styleClass="title" text="ADD EXPENSES" />
-                              <HBox prefHeight="28.0" prefWidth="734.0" styleClass="added-expenses-items-container">
+                              <HBox alignment="CENTER_LEFT" prefHeight="28.0" prefWidth="734.0" styleClass="added-expenses-items-container">
                                  <children>
                                     <ChoiceBox fx:id="choiceBox" prefWidth="150.0" />
                                     <TextField fx:id="expenseValue" promptText="Insert Amount..." />
                                     <Button mnemonicParsing="false" onAction="#addItem" text="ADD" />
                                     <DatePicker fx:id="datePicker" promptText="Pick date..." onAction="#refresh"/>
+                                    <Label fx:id="successMsg" alignment="CENTER" styleClass="successMsg" text="Successfully Added Item!" />
                                  </children>
                               </HBox>
                               <TextArea fx:id="expenseDescription" prefHeight="100.0" prefWidth="734.0" promptText="Expense Description" />

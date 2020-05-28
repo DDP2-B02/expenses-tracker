@@ -1,6 +1,7 @@
 package ddp2.b02;
 
 import connectivity.Connectivity;
+import javafx.animation.PauseTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,6 +16,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import javax.swing.*;
 import java.io.File;
@@ -86,11 +88,18 @@ public class DataInputPageController implements Initializable {
     @FXML
     private TextArea expenseDescription;
 
+    //SuccessMessage
+    @FXML
+    private Label successMsg;
+
     public DataInputPageController() throws SQLException {
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        //Hide successMessage
+        successMsg.setVisible(false);
+
         //Set Date Picker
         datePicker.setValue(java.time.LocalDate.now());
         datePicker.setEditable(false);
@@ -137,6 +146,14 @@ public class DataInputPageController implements Initializable {
         String sql;
         sql = String.format("INSERT INTO `item`(`date`, `type`, `value`, `description`) VALUES ('%s','%s', %d , '%s')", this.date, choice, value, description);
         statement.executeUpdate(sql);
+        showMessage();
+    }
+
+    public void showMessage() {
+        PauseTransition delay = new PauseTransition(Duration.seconds(3));
+        delay.setOnFinished(ev ->  successMsg.setVisible(false));
+        successMsg.setVisible(true);
+        delay.play();
     }
 
     /**
@@ -220,8 +237,6 @@ public class DataInputPageController implements Initializable {
             data.put("ACADEMIC", fetchData("ACADEMIC"));
             data.put("MISC", fetchData("MISC"));
             data.put("TRANSPORT", fetchData("TRANSPORT"));
-            System.out.println(data.size());
-            System.out.println(data.get("FOOD").size());
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
