@@ -42,8 +42,8 @@
                                   <NumberAxis label="Total Expenses" side="LEFT" />
                                 </yAxis>
                               </LineChart>
-                              <Button layoutX="714.0" layoutY="18.0" mnemonicParsing="false" onAction="#refresh" styleClass="refreshBtn" text="⟳" />
-                              <Label fx:id="invalidDate" layoutX="389.0" layoutY="21.0" styleClass="invalidDate" text="Invalid date!" />
+                              <Button fx:id="refreshButton" layoutX="384.0" layoutY="21.0" mnemonicParsing="false" onAction="#refresh" text="⟳" textAlignment="CENTER" />
+                              <Label fx:id="invalidDate" layoutX="417.0" layoutY="22.0" styleClass="invalidDate" text="Invalid date!" />
                            </children>
                         </AnchorPane>
                      </children>

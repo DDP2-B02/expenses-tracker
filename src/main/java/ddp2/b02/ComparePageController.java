@@ -55,6 +55,10 @@ public class ComparePageController implements Initializable {
     @FXML
     private Label invalidDate;
 
+    // Refresh button
+    @FXML
+    private Button refreshButton;
+
     // Line chart
     @FXML
     private LineChart lineChart;
@@ -187,45 +191,7 @@ public class ComparePageController implements Initializable {
      * Event handler when from date was changed
      */
     public void onFromDateChange(ActionEvent actionEvent) {
-        // Get from and to dates
-        LocalDate fromLocalDate = fromDatePick.getValue();
-        LocalDate toLocalDate = toDatePick.getValue();
-
-        // Date choice validity check
-        if (toLocalDate == null) return;
-        if (isInvalidDate()) return;
-
-        // Clear line chart
-        lineChart.getData().remove(0);
-
-        // Setup the series
-        XYChart.Series series = new XYChart.Series();
-        series.setName(String.format("Expenses from %s until %s", fromLocalDate.toString(), toLocalDate.toString()));
-
-        // Get total expenses per day, from start date to end date
-        for (LocalDate date = fromLocalDate; date.isBefore(toLocalDate.plusDays(1)); date = date.plusDays(1)) {
-            // Query statement
-            String queryStatement;
-            queryStatement = String.format("SELECT * FROM item WHERE date='%s'", date.toString());
-            
-            // Getting the data
-            int totalExpenses = 0;
-            try {
-                ResultSet rs;
-                rs = statement.executeQuery(queryStatement);
-                while (rs.next()) { // Iterate through all the data recieved
-                    totalExpenses += rs.getInt("value");
-                }
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-
-            // Add this date total expenses to the series
-            series.getData().add(new XYChart.Data(date.toString(), totalExpenses));
-        }
-
-        // Add the new series to the line chart
-        lineChart.getData().add(series);
+        refreshButton.fire(); // Press the refresh button
     }
 
 
@@ -234,45 +200,7 @@ public class ComparePageController implements Initializable {
      * Event handler when to date was changed
      */
     public void onToDateChange(ActionEvent actionEvent) {
-        // Get from and to dates
-        LocalDate fromLocalDate = fromDatePick.getValue();
-        LocalDate toLocalDate = toDatePick.getValue();
-
-        // Date choice validity check
-        if (fromLocalDate == null) return;
-        if (isInvalidDate()) return;
-        
-        // Clear line chart
-        lineChart.getData().remove(0);
-
-        // Setup the series
-        XYChart.Series series = new XYChart.Series();
-        series.setName(String.format("Expenses from %s until %s", fromLocalDate.toString(), toLocalDate.toString()));
-
-        // Get total expenses per day, from start date to end date
-        for (LocalDate date = fromLocalDate; date.isBefore(toLocalDate.plusDays(1)); date = date.plusDays(1)) {
-            // Query statement
-            String queryStatement;
-            queryStatement = String.format("SELECT * FROM item WHERE date='%s'", date.toString());
-            
-            // Getting the data
-            int totalExpenses = 0;
-            try {
-                ResultSet rs;
-                rs = statement.executeQuery(queryStatement);
-                while (rs.next()) { // Iterate through all the data recieved
-                    totalExpenses += rs.getInt("value");
-                }
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-
-            // Add this date total expenses to the series
-            series.getData().add(new XYChart.Data(date.toString(), totalExpenses));
-        }
-
-        // Add the new series to the line chart
-        lineChart.getData().add(series);
+        refreshButton.fire(); // Press the refresh button
     }
 
 
@@ -326,7 +254,8 @@ public class ComparePageController implements Initializable {
             if (isInvalidDate()) return;
             
             // Clear line chart
-            lineChart.getData().remove(0);
+            lineChart.getData().remove(0); 
+            lineChart.setAnimated(true);
 
             // Setup the series
             XYChart.Series series = new XYChart.Series();
@@ -356,6 +285,7 @@ public class ComparePageController implements Initializable {
 
             // Add the new series to the line chart
             lineChart.getData().add(series);
+            lineChart.setAnimated(false);
         }
         
 
