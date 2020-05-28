@@ -11,10 +11,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -147,6 +145,9 @@ public class DataInputPageController implements Initializable {
         sql = String.format("INSERT INTO `item`(`date`, `type`, `value`, `description`) VALUES ('%s','%s', %d , '%s')", this.date, choice, value, description);
         statement.executeUpdate(sql);
         showMessage();
+        refresh();
+        expenseDescription.clear();
+        expenseValue.clear();
     }
 
     public void showMessage() {
@@ -197,16 +198,44 @@ public class DataInputPageController implements Initializable {
      * @param dataItem
      * @return
      */
-    public HBox showExpenses(HashMap<Integer, Object[]> dataItem) {
-        HBox data = new HBox();
+    public VBox showExpenses(HashMap<Integer, Object[]> dataItem) {
+
+        VBox data = new VBox();
+
+        // Check if the data is empty
         if (dataItem.size() < 1) {
             Label noItem = new Label("It's Empty");
             data.getChildren().addAll(noItem);
         } else {
-            for (Object[] details : dataItem.values()) {
-                Label description = new Label(details[1].toString());
-                Label value = new Label(details[0].toString());
-                data.getChildren().addAll(description, value);
+            for (Integer id : dataItem.keySet()) {
+                // Add item to accordion content
+                GridPane itemContainer = new GridPane();
+                Label description = new Label(dataItem.get(id)[1].toString());
+                Label value = new Label("Rp " + dataItem.get(id)[0].toString());
+                Button delete = new Button("X");
+
+                // Add class for styling
+                delete.getStyleClass().add("delete-button");
+                description.getStyleClass().add("description-box");
+                value.getStyleClass().add("value-box");
+                itemContainer.getStyleClass().add("item-container");
+
+                // Add trigger event
+                delete.setOnAction(event -> {
+                    delete(id);
+                });
+
+                // Create space for display
+                int row = 0;
+                itemContainer.getColumnConstraints().add(new ColumnConstraints(500));
+                itemContainer.getColumnConstraints().add(new ColumnConstraints((150)));
+                itemContainer.getColumnConstraints().add(new ColumnConstraints(20));
+                itemContainer.add(description, 0, row);
+                itemContainer.add(value, 1, row);
+                itemContainer.add(delete,2, row);
+                row++;
+
+                data.getChildren().add(itemContainer);
             }
         }
         return data;
@@ -248,5 +277,16 @@ public class DataInputPageController implements Initializable {
         dataAcademic.getChildren().add(showExpenses(data.get("ACADEMIC")));
         dataMisc.getChildren().add(showExpenses(data.get("MISC")));
         dataTransport.getChildren().add(showExpenses(data.get("TRANSPORT")));
+    }
+
+    public void delete(int id) {
+       String query = String.format("DELETE FROM item WHERE item_id=%d", id);
+       try {
+           Statement statement = connection.createStatement();
+           statement.execute(query);
+       } catch (Exception ex) {
+           ex.printStackTrace();
+       }
+       refresh();
     }
 }

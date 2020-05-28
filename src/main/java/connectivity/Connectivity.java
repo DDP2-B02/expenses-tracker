@@ -8,7 +8,7 @@ public class Connectivity {
     public Connection getConnection() {
         String dbName = "expenses_tracker_db";
         String dbUserName = "root";
-        String dbPassWord = System.getenv("MYSQL_DB_PASSWORD");
+        String dbPassWord = "";
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
