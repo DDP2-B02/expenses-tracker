@@ -67,7 +67,15 @@
 }
 
 .invalidDate {
-    -fx-background-color: #3ac200;
+    -fx-background-color: #ff5151;
+    -fx-background-radius: .5em;
+    -fx-font-weight: bold;
+    -fx-label-padding: 0.2em 0.5em 0.2em 0.5em;
+    -fx-text-fill: white;
+}
+
+.noData {
+    -fx-background-color: #ff5151;
     -fx-background-radius: .5em;
     -fx-font-weight: bold;
     -fx-label-padding: 0.2em 0.5em 0.2em 0.5em;

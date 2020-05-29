@@ -1,7 +1,6 @@
 package ddp2.b02;
 
 import connectivity.Connectivity;
-import javafx.animation.PauseTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,9 +13,8 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
-import javafx.scene.text.Text;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -55,7 +53,11 @@ public class ComparePageController implements Initializable {
 
     // Invalid date prompt
     @FXML
-    private Text invalidDate;
+    private Label invalidDate;
+
+    // Refresh button
+    @FXML
+    private Button refreshButton;
 
     // Line chart
     @FXML
@@ -64,6 +66,10 @@ public class ComparePageController implements Initializable {
     // Pie chart
     @FXML
     private PieChart pieChart;
+
+    // No data found prompt
+    @FXML
+    private Label noData;
 
     // Go to summary page button
     @FXML
@@ -95,12 +101,15 @@ public class ComparePageController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Node settings
+        fromDatePick.setEditable(false);
+        toDatePick.setEditable(false);
         invalidDate.setVisible(false);
         pieChart.setLabelsVisible(false); // Hide labels
         pieChart.setLegendVisible(true);
         pieChart.setLegendSide(Side.RIGHT);
         summaryButton.setDisable(true); // Disable summary button
         pieChart.setVisible(false); // Hide pie chart
+        noData.setVisible(false);
 
         /**
          * Generate the Line Graph for summary page
@@ -152,18 +161,8 @@ public class ComparePageController implements Initializable {
         /**
          * Generate the Pie Chart for summary page
          */
-        String[] categoryList = {
-                "FOOD",
-                "HOUSING",
-                "HEALTHCARE",
-                "ACADEMIC",
-                "MISC",
-                "TRANSPORT"
-        };
-
-        Connectivity connectivity = new Connectivity();
-        Connection connection = connectivity.getConnection();
-        Statement statement = connection.createStatement();
+        // Check if data found or not
+        boolean dataFound = false;
 
         // PieChart.Data array to store all expenses data per category
         PieChart.Data[] totalPerCategory = new PieChart.Data[categoryList.length];
@@ -176,79 +175,52 @@ public class ComparePageController implements Initializable {
             queryForCategory = String.format("SELECT * FROM item WHERE type='%s'", category);
 
             // Getting the data
-            int totalExpenses = 0;
+            int totalExpensesCategory = 0;
             try {
                 ResultSet rs;
                 rs = statement.executeQuery(queryForCategory);
                 while (rs.next()) { // Iterate through all the data recieved
-                    totalExpenses += rs.getInt("value");
+                    totalExpensesCategory += rs.getInt("value");
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
 
             // Add this category total expenses data to PieChart.Data array
-            totalPerCategory[i] = new PieChart.Data(category, totalExpenses);
+            totalPerCategory[i] = new PieChart.Data(category, totalExpensesCategory);
+            if (totalExpensesCategory != 0) { dataFound = true; } // Minimal one true value
         }
 
         // Generating the pie chart
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(totalPerCategory);
-        piechart.setData(pieChartData);
+        pieChart.setData(pieChartData);
+        pieChart.setTitle("Lifetime Expenses");
+        if (dataFound) { noData.setVisible(false); } else { noData.setVisible(true); }
     }
 
-    public void checkInvalidDate() {
-        if (toDatePick.getValue().isBefore(fromDatePick.getValue())) {
+
+
+    /**
+     * Check if date is valid (from date is before to date)
+     * Return true if invalid; false otherwise
+     */
+    public boolean isInvalidDate() {
+        if ((fromDatePick.getValue() != null) && (toDatePick.getValue() != null) && (toDatePick.getValue().isBefore(fromDatePick.getValue()))) {
             invalidDate.setVisible(true); // Show invalid date prompt
-            return;
-        } else {
+            return true;
+        } else { 
             invalidDate.setVisible(false);
+            return false;
         }
     }
+
 
     
     /**
      * Event handler when from date was changed
      */
     public void onFromDateChange(ActionEvent actionEvent) {
-        // Get from and to dates
-        LocalDate fromLocalDate = fromDatePick.getValue();
-        LocalDate toLocalDate = toDatePick.getValue();
-
-        // Date choice validity check
-        if (toLocalDate == null) return;
-        checkInvalidDate();
-
-        // Clear line chart
-        lineChart.getData().remove(0);
-
-        // Setup the series
-        XYChart.Series series = new XYChart.Series();
-        series.setName(String.format("Expenses from %s until %s", fromLocalDate.toString(), toLocalDate.toString()));
-
-        // Get total expenses per day, from start date to end date
-        for (LocalDate date = fromLocalDate; date.isBefore(toLocalDate.plusDays(1)); date = date.plusDays(1)) {
-            // Query statement
-            String queryStatement;
-            queryStatement = String.format("SELECT * FROM item WHERE date='%s'", date.toString());
-            
-            // Getting the data
-            int totalExpenses = 0;
-            try {
-                ResultSet rs;
-                rs = statement.executeQuery(queryStatement);
-                while (rs.next()) { // Iterate through all the data recieved
-                    totalExpenses += rs.getInt("value");
-                }
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-
-            // Add this date total expenses to the series
-            series.getData().add(new XYChart.Data(date.toString(), totalExpenses));
-        }
-
-        // Add the new series to the line chart
-        lineChart.getData().add(series);
+        refreshButton.fire(); // Press the refresh button
     }
 
 
@@ -257,45 +229,7 @@ public class ComparePageController implements Initializable {
      * Event handler when to date was changed
      */
     public void onToDateChange(ActionEvent actionEvent) {
-        // Get from and to dates
-        LocalDate fromLocalDate = fromDatePick.getValue();
-        LocalDate toLocalDate = toDatePick.getValue();
-
-        // Date choice validity check
-        if (fromLocalDate == null) return;
-        checkInvalidDate();
-        
-        // Clear line chart
-        lineChart.getData().remove(0);
-
-        // Setup the series
-        XYChart.Series series = new XYChart.Series();
-        series.setName(String.format("Expenses from %s until %s", fromLocalDate.toString(), toLocalDate.toString()));
-
-        // Get total expenses per day, from start date to end date
-        for (LocalDate date = fromLocalDate; date.isBefore(toLocalDate.plusDays(1)); date = date.plusDays(1)) {
-            // Query statement
-            String queryStatement;
-            queryStatement = String.format("SELECT * FROM item WHERE date='%s'", date.toString());
-            
-            // Getting the data
-            int totalExpenses = 0;
-            try {
-                ResultSet rs;
-                rs = statement.executeQuery(queryStatement);
-                while (rs.next()) { // Iterate through all the data recieved
-                    totalExpenses += rs.getInt("value");
-                }
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-
-            // Add this date total expenses to the series
-            series.getData().add(new XYChart.Data(date.toString(), totalExpenses));
-        }
-
-        // Add the new series to the line chart
-        lineChart.getData().add(series);
+        refreshButton.fire(); // Press the refresh button
     }
 
 
@@ -308,9 +242,7 @@ public class ComparePageController implements Initializable {
         summaryButton.setDisable(true); // Disable summary button
         pieChart.setVisible(false); // Hide pie chart
         lineChart.setVisible(true); // Show line chart
-        fromDatePick.setVisible(true); // Show from date picker
-        toDatePick.setVisible(true); // Show to date picker
-        checkInvalidDate();
+        isInvalidDate(); // Show or hide invalid date prompt
     }
 
     /**
@@ -321,9 +253,7 @@ public class ComparePageController implements Initializable {
         summaryButton.setDisable(false); // Enable summary button
         pieChart.setVisible(true); // Show pie chart
         lineChart.setVisible(false); // Hide line chart
-        fromDatePick.setVisible(false); // Hide from date picker
-        toDatePick.setVisible(false); // Hide to date picker
-        invalidDate.setVisible(false);
+        isInvalidDate(); // Show or hide invalid date prompt
     }
 
 
@@ -344,10 +274,11 @@ public class ComparePageController implements Initializable {
             // Date choice validity check
             if (fromLocalDate == null) return;
             if (toLocalDate == null) return;
-            checkInvalidDate();
+            if (isInvalidDate()) return;
             
             // Clear line chart
-            lineChart.getData().remove(0);
+            lineChart.getData().remove(0); 
+            lineChart.setAnimated(true);
 
             // Setup the series
             XYChart.Series series = new XYChart.Series();
@@ -377,6 +308,7 @@ public class ComparePageController implements Initializable {
 
             // Add the new series to the line chart
             lineChart.getData().add(series);
+            lineChart.setAnimated(false);
         }
         
 
@@ -384,15 +316,27 @@ public class ComparePageController implements Initializable {
          * Refresh Pie Chart
          */
         else if (pieChart.isVisible()) {
+            // Get from and to dates
+            LocalDate fromLocalDate = fromDatePick.getValue();
+            LocalDate toLocalDate = toDatePick.getValue();
+
+            // Date choice validity check
+            if (fromLocalDate == null) return;
+            if (toLocalDate == null) return;
+            if (isInvalidDate()) return;
+
+            // Check if data found or not
+            boolean dataFound = false;
+
             // PieChart.Data array to store all expenses data per category
             PieChart.Data[] totalPerCategory = new PieChart.Data[categoryList.length];
 
-            // Get total expenses per category
+            // Get total expenses per category between two dates
             for (int i = 0; i < categoryList.length; i++) {
                 // Query statement
                 String category = categoryList[i];
                 String queryForCategory;
-                queryForCategory = String.format("SELECT * FROM item WHERE type='%s'", category);
+                queryForCategory = String.format("SELECT * FROM item WHERE (date BETWEEN '%s' AND '%s') AND (type='%s')", fromLocalDate.toString(), toLocalDate.toString(), category);
 
                 // Getting the data
                 int totalExpenses = 0;
@@ -408,11 +352,14 @@ public class ComparePageController implements Initializable {
 
                 // Add this category total expenses data to PieChart.Data array
                 totalPerCategory[i] = new PieChart.Data(category, totalExpenses);
+                if (totalExpenses != 0) { dataFound = true; } // Minimal one true value
             }
 
             // Generating the pie chart
             ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(totalPerCategory);
             pieChart.setData(pieChartData);
+            pieChart.setTitle(String.format("Expenses from %s until %s", fromLocalDate.toString(), toLocalDate.toString()));
+            if (dataFound) { noData.setVisible(false); } else { noData.setVisible(true); };
         }
     }
 }
