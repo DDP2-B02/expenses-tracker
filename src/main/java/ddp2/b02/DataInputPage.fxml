@@ -28,33 +28,38 @@
                                       <panes>
                                         <TitledPane animated="false" text="Food">
                                           <content>
-                                                <VBox style="-fx-background-color: White;" fx:id="dataFood" />
+                                                <VBox fx:id="dataFood" style="-fx-background-color: White;" />
                                           </content>
                                         </TitledPane>
                                         <TitledPane animated="false" text="Transport">
                                           <content>
-                                                <VBox style="-fx-background-color: White;" fx:id="dataTransport"/>
+                                                <VBox fx:id="dataTransport" style="-fx-background-color: White;" />
                                           </content>
                                         </TitledPane>
                                         <TitledPane animated="false" text="Housing">
                                           <content>
-                                                <VBox style="-fx-background-color: White;" fx:id="dataHousing"/>
+                                                <VBox fx:id="dataHousing" style="-fx-background-color: White;" />
                                           </content>
                                         </TitledPane>
                                           <TitledPane animated="false" layoutX="10.0" layoutY="72.0" text="Healthcare">
                                              <content>
-                                                <VBox style="-fx-background-color: White;" fx:id="dataHealthCare" />
+                                                <VBox fx:id="dataHealthCare" style="-fx-background-color: White;" />
                                              </content>
                                           </TitledPane>
                                           <TitledPane animated="false" layoutX="10.0" layoutY="104.0" text="Academic">
                                              <content>
-                                                <VBox style="-fx-background-color: White;" fx:id="dataAcademic"/>
+                                                <VBox fx:id="dataAcademic" style="-fx-background-color: White;" />
                                              </content>
                                           </TitledPane>
                                           <TitledPane animated="false" layoutX="10.0" layoutY="134.0" text="Miscellaneous">
                                              <content>
-                                                <VBox style="-fx-background-color: White;" fx:id="dataMisc"/>
+                                                <VBox fx:id="dataMisc" style="-fx-background-color: White;" />
                                              </content>
+                                          </TitledPane>
+                                          <TitledPane animated="false" text="untitled">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                            </content>
                                           </TitledPane>
                                       </panes>
                                     </Accordion>
@@ -70,7 +75,7 @@
                                     <ChoiceBox fx:id="choiceBox" prefWidth="150.0" />
                                     <TextField fx:id="expenseValue" promptText="Insert Amount..." />
                                     <Button mnemonicParsing="false" onAction="#addItem" text="ADD" />
-                                    <DatePicker fx:id="datePicker" promptText="Pick date..." onAction="#refresh"/>
+                                    <DatePicker fx:id="datePicker" onAction="#refresh" promptText="Pick date..." />
                                     <Label fx:id="successMsg" alignment="CENTER" styleClass="successMsg" text="Successfully Added Item!" />
                                  </children>
                               </HBox>
