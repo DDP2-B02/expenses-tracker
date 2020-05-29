@@ -44,7 +44,7 @@
                                 </yAxis>
                               </LineChart>
                               <Button styleClass="refreshBtn" layoutX="714.0" layoutY="18.0" mnemonicParsing="false" onAction="#refresh" text="⟳" />
-                              <Text fx:id="invalidDate" fill="RED" layoutX="387.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid date!" />
+                              <Text fx:id="invalidDate" styleClass="invalidDate" fill="RED" layoutX="387.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid date!" />
                            </children>
                         </AnchorPane>
                      </children>

@@ -165,6 +165,17 @@ public class ComparePageController implements Initializable {
         pieChart.setData(pieChartData);
     }
 
+    public void checkInvalidDate() {
+        boolean toDateIsValid = toDatePick.getValue() != null;
+        if (toDateIsValid) {
+            if (toDatePick.getValue().isBefore(fromDatePick.getValue())) {
+                invalidDate.setVisible(true); // Show invalid date prompt
+                return;
+            } else {
+                invalidDate.setVisible(false);
+            }
+        }
+    }
 
     
     /**
@@ -177,14 +188,7 @@ public class ComparePageController implements Initializable {
 
         // Date choice validity check
         if (toLocalDate == null) return;
-        if (toLocalDate.isBefore(fromLocalDate)) {
-            invalidDate.setVisible(true); // Show invalid date prompt
-            // Hide invalid date prompt ater 1 second
-            PauseTransition delay = new PauseTransition(Duration.seconds(1));
-            delay.setOnFinished(ev ->  invalidDate.setVisible(false)); 
-            delay.play();
-            return;
-        }
+        checkInvalidDate();
 
         // Clear line chart
         lineChart.getData().remove(0);
@@ -231,14 +235,7 @@ public class ComparePageController implements Initializable {
 
         // Date choice validity check
         if (fromLocalDate == null) return;
-        if (toLocalDate.isBefore(fromLocalDate)) {
-            invalidDate.setVisible(true); // Show invalid date prompt
-            // Hide invalid date prompt ater 1 second
-            PauseTransition delay = new PauseTransition(Duration.seconds(1));
-            delay.setOnFinished(ev ->  invalidDate.setVisible(false)); 
-            delay.play();
-            return;
-        }
+        checkInvalidDate();
         
         // Clear line chart
         lineChart.getData().remove(0);
@@ -285,6 +282,7 @@ public class ComparePageController implements Initializable {
         lineChart.setVisible(true); // Show line chart
         fromDatePick.setVisible(true); // Show from date picker
         toDatePick.setVisible(true); // Show to date picker
+        checkInvalidDate();
     }
 
 
@@ -299,6 +297,7 @@ public class ComparePageController implements Initializable {
         lineChart.setVisible(false); // Hide line chart
         fromDatePick.setVisible(false); // Hide from date picker
         toDatePick.setVisible(false); // Hide to date picker
+        invalidDate.setVisible(false);
     }
 
 
@@ -319,14 +318,7 @@ public class ComparePageController implements Initializable {
             // Date choice validity check
             if (fromLocalDate == null) return;
             if (toLocalDate == null) return;
-            if (toLocalDate.isBefore(fromLocalDate)) {
-                invalidDate.setVisible(true); // Show invalid date prompt
-                // Hide invalid date prompt ater 1 second
-                PauseTransition delay = new PauseTransition(Duration.seconds(1));
-                delay.setOnFinished(ev ->  invalidDate.setVisible(false)); 
-                delay.play();
-                return;
-            }
+            checkInvalidDate();
             
             // Clear line chart
             lineChart.getData().remove(0);
