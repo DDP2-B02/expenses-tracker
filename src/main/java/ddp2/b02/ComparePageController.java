@@ -1,5 +1,6 @@
 package ddp2.b02;
 
+import com.mysql.jdbc.Connection;
 import connectivity.Connectivity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,7 +18,6 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.net.URL;
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -30,7 +30,7 @@ public class ComparePageController implements Initializable {
     
     //Set DB Connectivity
     private Connectivity connectivity = new Connectivity();
-    private Connection connection = connectivity.getConnection();
+    private Connection connection = (Connection) connectivity.getConnection();
     private Statement statement = connection.createStatement();
 
     // List of expenses category
