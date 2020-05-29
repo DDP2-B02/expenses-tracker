@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="comparePageRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600" minWidth="800" prefHeight="600.0" prefWidth="900.0" styleClass="main" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ddp2.b02.ComparePageController">
    <children>
@@ -34,6 +33,7 @@
                               <DatePicker fx:id="toDatePick" layoutX="203.0" layoutY="21.0" onAction="#onToDateChange" promptText="To date..." />
                               <Button fx:id="summaryButton" layoutX="241.0" layoutY="423.0" mnemonicParsing="false" onAction="#gotoSummary" prefHeight="37.0" prefWidth="142.0" styleClass="btn" text="Summary" />
                               <Button fx:id="categoryButton" layoutX="398.0" layoutY="423.0" mnemonicParsing="false" onAction="#gotoCategory" prefHeight="37.0" prefWidth="142.0" styleClass="btn" text="By Category" />
+                              <Label fx:id="noData" layoutX="290.0" layoutY="234.0" styleClass="noData" text="No data found!" textAlignment="CENTER" />
                               <PieChart fx:id="pieChart" layoutX="32.0" layoutY="59.0" prefHeight="348.0" prefWidth="713.0" />
                               <LineChart fx:id="lineChart" layoutX="32.0" layoutY="59.0" prefHeight="348.0" prefWidth="713.0">
                                 <xAxis>
@@ -43,8 +43,8 @@
                                   <NumberAxis label="Total Expenses" side="LEFT" />
                                 </yAxis>
                               </LineChart>
-                              <Button styleClass="refreshBtn" layoutX="714.0" layoutY="18.0" mnemonicParsing="false" onAction="#refresh" text="⟳" />
-                              <Text fx:id="invalidDate" styleClass="invalidDate" fill="RED" layoutX="387.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid date!" />
+                              <Button fx:id="refreshButton" layoutX="384.0" layoutY="21.0" mnemonicParsing="false" onAction="#refresh" text="⟳" textAlignment="CENTER" />
+                              <Label fx:id="invalidDate" layoutX="417.0" layoutY="22.0" styleClass="invalidDate" text="Invalid date!" />
                            </children>
                         </AnchorPane>
                      </children>
