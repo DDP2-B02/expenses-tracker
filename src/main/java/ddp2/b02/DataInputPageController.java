@@ -88,7 +88,7 @@ public class DataInputPageController implements Initializable {
 
     //SuccessMessage
     @FXML
-    private Label successMsg;
+    private Label message;
 
     public DataInputPageController() throws SQLException {
     }
@@ -96,7 +96,7 @@ public class DataInputPageController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //Hide successMessage
-        successMsg.setVisible(false);
+        message.setVisible(false);
 
         //Set Date Picker
         datePicker.setValue(java.time.LocalDate.now());
@@ -131,29 +131,36 @@ public class DataInputPageController implements Initializable {
         int value = 0;
         try {
             value = Integer.parseInt(expenseValue.getText());
+            if (!description.equals("")) {
+                // Insert Day Row
+                this.date = datePicker.getValue().toString();
+                String createDay = String.format("INSERT IGNORE INTO `day`(`date`) VALUES ('%s')", this.date);
+                statement.executeUpdate(createDay);
+
+                // Insert Item
+                String sql;
+                sql = String.format("INSERT INTO `item`(`date`, `type`, `value`, `description`) VALUES ('%s','%s', %d , '%s')", this.date, choice, value, description);
+                statement.executeUpdate(sql);
+                showMessage("Successfully added item!");
+                refresh();
+                expenseDescription.clear();
+                expenseValue.clear();
+            } else {
+                showMessage("Failed, Fill all fields!");
+            }
         } catch (NumberFormatException e) {
+            showMessage("Failed, Fill all fields!");
             System.out.println("Not number");
         }
 
-        // Insert Day Row
-        this.date = datePicker.getValue().toString();
-        String createDay = String.format("INSERT IGNORE INTO `day`(`date`) VALUES ('%s')", this.date);
-        statement.executeUpdate(createDay);
 
-        // Insert Item
-        String sql;
-        sql = String.format("INSERT INTO `item`(`date`, `type`, `value`, `description`) VALUES ('%s','%s', %d , '%s')", this.date, choice, value, description);
-        statement.executeUpdate(sql);
-        showMessage();
-        refresh();
-        expenseDescription.clear();
-        expenseValue.clear();
     }
 
-    public void showMessage() {
+    public void showMessage(String messageText) {
+        message.setText(messageText);
         PauseTransition delay = new PauseTransition(Duration.seconds(3));
-        delay.setOnFinished(ev ->  successMsg.setVisible(false));
-        successMsg.setVisible(true);
+        delay.setOnFinished(ev ->  message.setVisible(false));
+        message.setVisible(true);
         delay.play();
     }
 
