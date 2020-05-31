@@ -4,13 +4,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-import javax.xml.crypto.Data;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 
 public class Main extends Application {
@@ -23,14 +19,14 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         //Data Input Page
-        URL dataInputPageUrl = new File("src/main/java/ddp2/b02/DataInputPage.fxml").toURI().toURL();
-        FXMLLoader dataInputFxmlLoader = new FXMLLoader(dataInputPageUrl);
+        FXMLLoader dataInputFxmlLoader = new FXMLLoader();
+        dataInputFxmlLoader.setLocation(getClass().getResource("/DataInputPage.fxml"));
         Parent dataInputRoot = dataInputFxmlLoader.load();
         dataInputScene = new Scene(dataInputRoot,800,600);
 
         //Compare Page
-        URL comparePageUrl = new File("src/main/java/ddp2/b02/ComparePage.fxml").toURI().toURL();
-        FXMLLoader comparePageFxmlLoader = new FXMLLoader(comparePageUrl);
+        FXMLLoader comparePageFxmlLoader = new FXMLLoader();
+        comparePageFxmlLoader.setLocation(getClass().getResource("/ComparePage.fxml"));
         Parent comparePageRoot = comparePageFxmlLoader.load();
         compareScene = new Scene(comparePageRoot,800,600);
 
