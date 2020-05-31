@@ -1,6 +1,5 @@
 package ddp2.b02;
 
-import com.mysql.jdbc.Connection;
 import connectivity.Connectivity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,6 +17,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -93,8 +93,6 @@ public class ComparePageController implements Initializable {
     public void changePage(ActionEvent actionEvent) {
         this.primaryStage.setScene(this.dataInputScene);
     }
-
-
 
     /**
      * Will initialize to display summary page

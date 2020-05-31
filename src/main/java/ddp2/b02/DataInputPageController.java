@@ -134,13 +134,14 @@ public class DataInputPageController implements Initializable {
             if (!description.equals("")) {
                 // Insert Day Row
                 this.date = datePicker.getValue().toString();
-                String createDay = String.format("INSERT IGNORE INTO `day`(`date`) VALUES ('%s')", this.date);
+                String createDay = String.format("INSERT OR IGNORE INTO `day`(`date`) VALUES ('%s')", this.date);
                 statement.executeUpdate(createDay);
 
                 // Insert Item
                 String sql;
                 sql = String.format("INSERT INTO `item`(`date`, `type`, `value`, `description`) VALUES ('%s','%s', %d , '%s')", this.date, choice, value, description);
                 statement.executeUpdate(sql);
+
                 showMessage("Successfully added item!");
                 refresh();
                 expenseDescription.clear();
@@ -289,7 +290,7 @@ public class DataInputPageController implements Initializable {
     public void delete(int id) {
        String query = String.format("DELETE FROM item WHERE item_id=%d", id);
        try {
-           Statement statement = connection.createStatement();
+//           Statement statement = connection.createStatement();
            statement.execute(query);
        } catch (Exception ex) {
            ex.printStackTrace();

@@ -7,34 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9374523-e53c-4007-b6ed-45c8e804613a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/expenses_tracker_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/expenses_tracker_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__mysql_mysql_connector_java_5_1_13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_base_14.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_base_win_14.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_controls_14.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_controls_win_14.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_fxml_win_14.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_graphics_14.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_graphics_win_14.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.buildship.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.buildship.core.prefs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/expenses_tracker_jar/expenses-tracker.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/expenses_tracker_jar/expenses-tracker.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ddp2/b02/ComparePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ComparePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ddp2/b02/DataInputPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DataInputPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ddp2/b02/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ddp2/b02/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ddp2/b02/MainStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MainStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/connectivity/Connectivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/connectivity/Connectivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/connectivity/Connectivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/connectivity/Connectivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ddp2/b02/ComparePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ddp2/b02/ComparePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ddp2/b02/DataInputPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ddp2/b02/DataInputPageController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,13 +92,16 @@
     </option>
   </component>
   <component name="ProjectId" id="1caTvqNDnzHeBPhHD8BfDrV2gbm" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -123,27 +111,22 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ASUS\Documents\project_files\expenses-tracker\src\main\resources" />
       <recent name="C:\Users\ASUS\Documents\project_files\expenses-tracker\src\main\java\ddp2\b02" />
+      <recent name="C:\Users\ASUS\Documents\project_files\expenses-tracker\src\main\resources\databases" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.expenses-tracker [shadowJar]">
-    <configuration name="expenses-tracker [createJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="createJar" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
+  <component name="RunManager" selected="Gradle.expenses-tracker [run]">
+    <configuration name="Connectivity" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="connectivity.Connectivity" />
+      <module name="expenses-tracker.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="connectivity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="expenses-tracker [runShadow]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -224,10 +207,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.expenses-tracker [run]" />
+        <item itemvalue="Application.Connectivity" />
+        <item itemvalue="Gradle.expenses-tracker [shadowJar]" />
         <item itemvalue="Gradle.expenses-tracker [startShadowScripts]" />
         <item itemvalue="Gradle.expenses-tracker [runShadow]" />
-        <item itemvalue="Gradle.expenses-tracker [shadowJar]" />
-        <item itemvalue="Gradle.expenses-tracker [createJar]" />
       </list>
     </recent_temporary>
   </component>
@@ -256,6 +239,9 @@
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="428" y="168" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590768472951">
       <screen x="0" y="0" width="1366" height="728" />
@@ -277,22 +263,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="459" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1590767497839" />
-    <state width="1323" height="193" key="GridCell.Tab.0.bottom" timestamp="1590929014723">
+    <state width="1323" height="168" key="GridCell.Tab.0.bottom" timestamp="1590940656023">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="193" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590929014723" />
-    <state width="1323" height="193" key="GridCell.Tab.0.center" timestamp="1590929014723">
+    <state width="1323" height="168" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590940656023" />
+    <state width="1323" height="168" key="GridCell.Tab.0.center" timestamp="1590940656022">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="193" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1590929014723" />
-    <state width="1323" height="193" key="GridCell.Tab.0.left" timestamp="1590929014723">
+    <state width="1323" height="168" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1590940656022" />
+    <state width="1323" height="168" key="GridCell.Tab.0.left" timestamp="1590940656022">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="193" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1590929014723" />
-    <state width="1323" height="193" key="GridCell.Tab.0.right" timestamp="1590929014723">
+    <state width="1323" height="168" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1590940656022" />
+    <state width="1323" height="168" key="GridCell.Tab.0.right" timestamp="1590940656023">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="193" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1590929014723" />
+    <state width="1323" height="168" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1590940656023" />
     <state x="35" y="0" width="1289" height="728" key="SettingsEditor" timestamp="1590772869667">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
