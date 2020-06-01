@@ -7,19 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9374523-e53c-4007-b6ed-45c8e804613a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/distributions/expenses-tracker-1.0-SNAPSHOT.tar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/distributions/expenses-tracker-1.0-SNAPSHOT.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/scripts/expenses-tracker" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/scripts/expenses-tracker.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/expenses_tracker_jar/expenses-tracker.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/db_dump.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ddp2/b02/ComparePageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ddp2/b02/ComparePageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/connectivity/Connectivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/connectivity/Connectivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ddp2/b02/ComparePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ddp2/b02/ComparePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ddp2/b02/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ddp2/b02/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db_dump.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,12 +48,6 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="expenses-tracker" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="expenses-tracker" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="application" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -263,22 +257,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="459" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1590767497839" />
-    <state width="1323" height="223" key="GridCell.Tab.0.bottom" timestamp="1590947351274">
+    <state width="1323" height="132" key="GridCell.Tab.0.bottom" timestamp="1591019121414">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590947351274" />
-    <state width="1323" height="223" key="GridCell.Tab.0.center" timestamp="1590947351274">
+    <state width="1323" height="132" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591019121414" />
+    <state width="1323" height="132" key="GridCell.Tab.0.center" timestamp="1591019121414">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1590947351274" />
-    <state width="1323" height="223" key="GridCell.Tab.0.left" timestamp="1590947351274">
+    <state width="1323" height="132" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591019121414" />
+    <state width="1323" height="132" key="GridCell.Tab.0.left" timestamp="1591019121414">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1590947351274" />
-    <state width="1323" height="223" key="GridCell.Tab.0.right" timestamp="1590947351274">
+    <state width="1323" height="132" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591019121414" />
+    <state width="1323" height="132" key="GridCell.Tab.0.right" timestamp="1591019121414">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1590947351274" />
+    <state width="1323" height="132" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591019121414" />
     <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1590947351274">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

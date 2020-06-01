@@ -6,8 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.*;
-import java.net.URL;
+import java.io.IOException;
 
 public class Main extends Application {
     Scene dataInputScene;
