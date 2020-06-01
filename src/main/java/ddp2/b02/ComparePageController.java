@@ -30,7 +30,7 @@ public class ComparePageController implements Initializable {
     
     //Set DB Connectivity
     private Connectivity connectivity = new Connectivity();
-    private Connection connection = connectivity.getConnection();
+    private Connection connection = (Connection) connectivity.getConnection();
     private Statement statement = connection.createStatement();
 
     // List of expenses category
@@ -126,7 +126,7 @@ public class ComparePageController implements Initializable {
 
         //Generate pie chart
         try {
-            ComparePageController.generatePieChart(this.pieChart);
+            this.generatePieChart(this.pieChart);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -156,7 +156,7 @@ public class ComparePageController implements Initializable {
         return totalExpenses;
     }
 
-    public static void generatePieChart(PieChart piechart) throws SQLException {
+    public void generatePieChart(PieChart piechart) throws SQLException {
 
         /**
          * Generate the Pie Chart for summary page

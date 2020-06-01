@@ -5,14 +5,14 @@ import java.sql.DriverManager;
 
 public class Connectivity {
     private Connection connection;
-    public Connection getConnection() {
-        String dbName = "expenses_tracker_db";
-        String dbUserName = "root";
-        String dbPassWord = "";
 
+    /*
+    * Method to get connection to sqlite database
+    * */
+    public Connection getConnection() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/"+dbName,dbUserName,dbPassWord);
+            Class.forName("org.sqlite.JDBC");
+            connection = DriverManager.getConnection("jdbc:sqlite::resource:db.db");
         } catch (Exception e) {
             e.printStackTrace();
         }

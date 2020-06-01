@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: ddp2.b02.FakeMain
+Class-Path: lib/*
+
