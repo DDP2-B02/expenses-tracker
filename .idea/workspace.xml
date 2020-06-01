@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="expenses-tracker:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="aea8e142-95a1-443d-b8da-a59913d05566" name="Default Changelist" comment="" />
+    <list default="true" id="e9374523-e53c-4007-b6ed-45c8e804613a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ddp2/b02/ComparePageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/expenses-tracker-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/connectivity/Connectivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/connectivity/Connectivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ddp2/b02/ComparePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ddp2/b02/ComparePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ddp2/b02/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ddp2/b02/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db_dump.sql" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,7 +56,13 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="expenses-tracker" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="application" type="c8890929:TasksNode$1" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="expenses-tracker" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="shadow" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -46,24 +74,76 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaFXApplication" />
+        <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="ProjectId" id="1bkvTxRDO7CQy9UZSwzT6kASHX7" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\ASUS\Documents\project_files\expenses-tracker\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1caTvqNDnzHeBPhHD8BfDrV2gbm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Documents\project_files\expenses-tracker\src\main\resources" />
+      <recent name="C:\Users\ASUS\Documents\project_files\expenses-tracker\src\main\java\ddp2\b02" />
+      <recent name="C:\Users\ASUS\Documents\project_files\expenses-tracker\src\main\resources\databases" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.expenses-tracker [shadowJar]">
+    <configuration name="Connectivity" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="connectivity.Connectivity" />
+      <module name="expenses-tracker.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="connectivity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="expenses-tracker [runShadow]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="runShadow" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="expenses-tracker [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -83,9 +163,51 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="expenses-tracker [shadowJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="shadowJar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="expenses-tracker [startShadowScripts]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="startShadowScripts" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.expenses-tracker [shadowJar]" />
         <item itemvalue="Gradle.expenses-tracker [run]" />
+        <item itemvalue="Application.Connectivity" />
+        <item itemvalue="Gradle.expenses-tracker [startShadowScripts]" />
+        <item itemvalue="Gradle.expenses-tracker [runShadow]" />
       </list>
     </recent_temporary>
   </component>
@@ -106,38 +228,73 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="aea8e142-95a1-443d-b8da-a59913d05566" name="Default Changelist" comment="" />
-      <created>1589188920901</created>
+      <changelist id="e9374523-e53c-4007-b6ed-45c8e804613a" name="Default Changelist" comment="" />
+      <created>1590765950091</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1589188920901</updated>
+      <updated>1590765950091</updated>
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="23" key="#Project_Structure" timestamp="1589189472282">
+    <state x="428" y="168" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590768472951">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="23" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1589189472282" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1589190219504">
+    <state x="428" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1590768472951" />
+    <state x="413" y="149" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1590767424246">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1589190219504" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1589190219503">
+    <state x="413" y="149" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1590767424246" />
+    <state x="531" y="254" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1590767840566">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1589190219503" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1589190219503">
+    <state x="531" y="254" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.728@0.0.1366.728" timestamp="1590767840566" />
+    <state x="409" y="120" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1590772146363">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1589190219503" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1589190219503">
+    <state x="409" y="120" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1366.728@0.0.1366.728" timestamp="1590772146363" />
+    <state x="459" y="120" key="FileChooserDialogImpl" timestamp="1590767497839">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1589190219503" />
-    <state x="184" y="7" key="SettingsEditor" timestamp="1589189585270">
+    <state x="459" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1590767497839" />
+    <state width="1323" height="132" key="GridCell.Tab.0.bottom" timestamp="1591019121414">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1589189585270" />
+    <state width="1323" height="132" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591019121414" />
+    <state width="1323" height="132" key="GridCell.Tab.0.center" timestamp="1591019121414">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="132" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591019121414" />
+    <state width="1323" height="132" key="GridCell.Tab.0.left" timestamp="1591019121414">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="132" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591019121414" />
+    <state width="1323" height="132" key="GridCell.Tab.0.right" timestamp="1591019121414">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="132" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591019121414" />
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1590947351274">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590947351274" />
+    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1590947351274">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1590947351274" />
+    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1590947351274">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1590947351274" />
+    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1590947351274">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1590947351274" />
+    <state x="35" y="0" width="1289" height="728" key="SettingsEditor" timestamp="1590772869667">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="35" y="0" width="1289" height="728" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1590772869667" />
   </component>
 </project>
