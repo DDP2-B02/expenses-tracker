@@ -41,7 +41,7 @@ public class ComparePageController implements Initializable {
         "ACADEMIC",
         "MISC",
         "TRANSPORT"
-      };
+    };
 
     // From date picker
     @FXML
@@ -114,8 +114,31 @@ public class ComparePageController implements Initializable {
         /**
          * Generate the Line Graph for summary page
          */
+        String todayDate = getTodayDate();
+        int totalExpenses = getExpensesData();
+
+
+        // Add today's expenses to the line chart
+        XYChart.Series series = new XYChart.Series();
+        series.setName("Today's Expenses");
+        series.getData().add(new XYChart.Data(todayDate, totalExpenses));
+        lineChart.getData().add(series);
+
+        //Generate pie chart
+        try {
+            ComparePageController.generatePieChart(this.pieChart);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public String getTodayDate() {
+        return ((LocalDate) LocalDate.now()).toString();
+    }
+
+    public int getExpensesData() {
         // Query statement
-        String todayDate = ((LocalDate) LocalDate.now()).toString();
+        String todayDate = getTodayDate();
         String queryTodayData;
         queryTodayData = String.format("SELECT * FROM item WHERE date='%s'", todayDate);
 
@@ -130,13 +153,10 @@ public class ComparePageController implements Initializable {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        return totalExpenses;
+    }
 
-        // Add today's expenses to the line chart
-        XYChart.Series series = new XYChart.Series();
-        series.setName("Today's Expenses");
-        series.getData().add(new XYChart.Data(todayDate, totalExpenses));
-        lineChart.getData().add(series);
-
+    public static void generatePieChart(PieChart piechart) throws SQLException {
 
         /**
          * Generate the Pie Chart for summary page
@@ -224,8 +244,6 @@ public class ComparePageController implements Initializable {
         lineChart.setVisible(true); // Show line chart
         isInvalidDate(); // Show or hide invalid date prompt
     }
-
-
 
     /**
      * Event handler on category button press
